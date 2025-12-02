@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../style.css">
+    <link rel="icon" type="image/png" href="../../../assets/clay_cuneiform.png">
+    <title>一塊小泥板</title>
+</head>
+<body>
+    <main>
+        <h1>Practice 5 軟音符號與硬音符號</h1>
+        <p><b>恭喜你來到最後一個練習。也許你在前面的練習已經注意到了，在俄文中子音的「硬與軟」對於俄文構字來說非常重要 (即子音有沒有顎化，實際上這個語音特色在一些斯拉夫語言也很重要)。俄語基里爾字母有 2 個專用符號專門處理子音的軟硬標記，分別是軟音符號和硬音符號。這個練習將會介紹他們。</b></p>
+
+        <div class="table-container">
+            <table class="styled-table">
+                <thead>
+                    <tr>
+                        <th>俄語基里爾字母</th>
+                        <th>練習時請輸入...</th>
+                        <th>IPA 音值</th>
+                        <th>說明</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Ь/ь</td>
+                        <td>'</td>
+                        <td>軟音符號</td>
+                        <td>軟音符號的功能是「軟化」前面的子音 (讓前面一個子音顎化)。以 пь 為例，因為 п 在 ь 之前，所以 п 會被 ь 軟化變成軟子音。(顎化子音，像是在子音後面加一個 [i]，但不要把 [i] 發音出來)</td>
+                    </tr>
+                    <tr>
+                        <td>Ъ/ъ</td>
+                        <td>''</td>
+                        <td>硬音符號</td>
+                        <td>硬音符號的功能是用來隔離子音和軟母音 (例如: е, ё, и, ю, я)。以 бъе 為例，在沒有硬音符號的情況之下，б 會受到 е 的影響而變成軟子音。加上硬音符號後，б 不再受到 е 的影響，兩個字母獨立發音。</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p><b>和之前的練習一樣，下面的單字都是外來語，可以在練習的過程中猜猜看這些俄文字的前身是哪個語言的單字!</b></p>
+
+        <div class="exercise-container">
+            <div class="exercise-row">
+                <div class="script-word">объект</div>
+                <input type="text" class="quiz-input" data-answer="ob''ekt" placeholder="">
+                <div class="meaning">物品 (n. masc. inan.)</div>
+                <div class="feedback-icon"></div></div>
+            <div class="exercise-row">
+                <div class="script-word">компьютер</div>
+                <input type="text" class="quiz-input" data-answer="komp'juter" placeholder="">
+                <div class="meaning">電腦 (n. masc. inan.)</div>
+                <div class="feedback-icon"></div></div>
+            <div class="exercise-row">
+                <div class="script-word">инъекция</div>
+                <input type="text" class="quiz-input" data-answer="in''ekcija" placeholder="">
+                <div class="meaning">注射 (n. fem. inan.)</div>
+                <div class="feedback-icon"></div></div>
+            <div class="exercise-row">
+                <div class="script-word">бульон</div>
+                <input type="text" class="quiz-input" data-answer="bul'on" placeholder="">
+                <div class="meaning">肉湯 (n. masc. inan.)</div>
+                <div class="feedback-icon"></div></div>
+            <div class="exercise-row">
+                <div class="script-word">фильм</div>
+                <input type="text" class="quiz-input" data-answer="fil'm" placeholder="">
+                <div class="meaning">電影 (n. masc. inan.)</div>
+                <div class="feedback-icon"></div></div>
+        </div>
+        
+        <div class="nav-section">
+            <div class="primary-action">
+                <a href="lesson-4.html" class="button button-green">返回 Practice 4</a>
+            </div>
+            <div class="secondary-actions">
+                <a href="../../../index.html" class="button">回到首頁 / 書寫系統列表</a>
+                <a href="../index.html" class="button">回到俄語基里爾字母首頁</a>
+            </div>
+        </div>
+
+    </main>
+</body>
+<script>
+    const inputs = document.querySelectorAll('.quiz-input');
+
+    inputs.forEach(input => {
+        // We only need the 'input' event (real-time typing)
+        input.addEventListener('input', function() {
+            
+            let userTyped = input.value.trim().toLowerCase();
+            let correctAnswer = input.dataset.answer.toLowerCase();
+
+            // Logic: Is it a match?
+            if (userTyped === correctAnswer) {
+                // Yes! Turn it Green
+                input.classList.add('correct');
+            } else {
+                // No. Just keep it normal (remove green if they had it)
+                // We do NOT add any 'wrong' class here.
+                input.classList.remove('correct');
+            }
+        });
+    });
+</script>
+</html>

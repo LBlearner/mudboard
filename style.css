@@ -1,0 +1,368 @@
+/* style.css */
+
+/* 1. 全域設定：讓字體變好看，不再是預設的 Times New Roman */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6; /* 增加行距，讓閱讀更舒適 */
+    color: #333;      /* 字體不要全黑，深灰色比較不刺眼 */
+    background-color: #f4f4f4; /* 淡淡的灰色背景 */
+    margin: 0;
+    padding: 0;
+}
+
+/* 2. 版面控制：把內容集中在中間，不要寬到螢幕邊緣 */
+main, header, footer {
+    max-width: 1000px; /* 內容最大寬度 */
+    margin: 20px auto; /* 上下留邊，左右自動置中 */
+    padding: 20px;
+    background-color: white; /* 內容區域是白色 */
+    border-radius: 8px; /* 圓角效果 */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 微微的陰影 */
+}
+
+/* 3. 標題樣式 */
+h1 {
+    color: #2c3e50; /* 深藍色標題 */
+    /* border-bottom: 2px solid #eee; 標題底下的分隔線 */
+    padding-bottom: 10px;
+}
+
+h2 {
+    color: #2c3e50; /* 橘色副標題 */
+}
+
+/* 4. 連結樣式 */
+a {
+    color: #3498db; /* 亮藍色連結 */
+    text-decoration: none; /* 去掉底線 */
+}
+
+a:hover {
+    text-decoration: underline; /* 滑鼠移過去時才顯示底線 */
+    color: #2980b9;
+}
+
+/* style.css */
+
+/* Global Image Reset */
+img {
+    max-width: 100%; /* The crucial line: never exceed the parent container's width */
+    height: auto;    /* Ensures the image doesn't get stretched or squashed; maintains aspect ratio */
+    
+    /* Optional: Makes images block-level elements so they sit on their own line */
+    display: block; 
+    
+    /* Optional: Centers the image horizontally if it's smaller than the container */
+    margin: 20px auto; 
+}
+
+/* Reset the default browser margin for figure elements */
+figure {
+    margin: 20px auto; /* Centers the whole block (image + text) vertically and horizontally */
+    max-width: 100%;   /* Ensures the figure container doesn't overflow */
+    text-align: center; /* Optional: Centers the image and the text inside the figure */
+}
+
+/* Style the text description */
+figcaption {
+    font-size: 0.9em;       /* Slightly smaller than normal text */
+    color: #666;            /* Grey color instead of black */
+    font-style: italic;     /* Italic looks like a proper caption */
+    margin-top: 8px;        /* Adds a little space between image and text */
+    line-height: 1.4;       /* Tighter line height for captions */
+}
+
+/*        NEW     SECTION                */
+/* The styling of image cards begin here */
+
+/* 1. 讓卡片橫向排列 (Grid 佈局) */
+.card-container {
+    display: flex;
+    gap: 20px;           /* 卡片之間的間距 */
+    flex-wrap: wrap;     /* 如果螢幕太小，自動換行 */
+    justify-content: center; /* 讓卡片在畫面中間 */
+    margin-top: 20px;
+}
+
+/* 2. 設定卡片本身的樣子 */
+.image-card {
+    display: block;      /* 讓連結變成塊狀元素 */
+    width: 250px;        /* 設定每張卡片的寬度 */
+    background: white;
+    border-radius: 10px; /* 圓角 */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* 陰影 */
+    overflow: hidden;    /* 確保圖片不會超出圓角範圍 */
+    text-decoration: none; /* 去掉連結底線 */
+    transition: transform 0.3s, box-shadow 0.3s; /* 動畫效果 */
+}
+
+/* 3. 設定圖片的樣子 */
+.image-card img {
+    width: 100%;         /* 圖片寬度填滿卡片 */
+    height: 150px;       /* 固定高度 */
+    object-fit: cover;   /* 關鍵！這會裁切圖片，確保圖片不變形 */
+}
+
+/* 4. 設定文字的樣子 */
+.card-text {
+    padding: 15px;
+    text-align: center;
+    color: #333;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+/* 5. 滑鼠移過去的特效 */
+.image-card:hover {
+    transform: translateY(-5px); /* 整張卡片往上浮 */
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2); /* 陰影變深 */
+}
+
+/*        NEW     SECTION            */
+/* The styling of buttons begin here */
+
+.button {
+    display: inline-block;    /* Allows the link to have width/height/padding */
+    padding: 10px 20px;       /* Spacing inside the button */
+    background-color: #3498db; /* Blue background */
+    color: white;             /* White text */
+    text-decoration: none;    /* Remove the standard underline */
+    border-radius: 5px;       /* Rounded corners */
+    font-weight: bold;
+    margin-top: 20px;         /* Add some space outside the button */
+    transition: background-color 0.3s; /* Smooth color change animation */
+}
+
+/* Interaction State */
+.button:hover {
+    background-color: #2980b9; /* Darker blue when hovering */
+    color: white;
+    cursor: pointer;          /* Shows the hand icon */
+    transform: translateY(-2px); /* Slight "lift" effect */
+}
+
+/*        NEW     SECTION                  */
+/* The styling of exercise rows begin here */
+
+.exercise-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    background: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.script-word {
+    font-weight: 1em;
+    color: black; 
+    font-size: 1.2em;
+    min-width: 80px; /* Ensures alignment even if words have different lengths */
+}
+
+.quiz-input {
+    padding: 8px;
+    border: 2px solid #ccc; /* Default grey border */
+    border-radius: 4px;
+    font-size: 1em;
+    width: 150px;
+    outline: none; /* Removes the default blue browser glow */
+    transition: border-color 0.3s;
+}
+
+.meaning {
+    color: #555;
+    flex-grow: 1; /* Pushes the meaning to take available space */
+}
+
+/* --- Feedback States (JavaScript will switch these on) --- */
+
+/* Correct State: Green Border & Text */
+.quiz-input.correct {
+    border-color: #2ecc71;
+    background-color: #eafaf1;
+    color: #27ae60;
+}
+
+/*        NEW     SECTION           */
+/* The styling of table begins here */
+
+/* Container to handle mobile scrolling if the table gets too wide */
+.table-container {
+    overflow-x: auto; /* Adds a scrollbar on small screens */
+    margin: 20px 0;
+}
+
+.styled-table {
+    width: 100%;
+    border-collapse: collapse; /* Essential: Removes the double borders */
+    margin: 0;
+    font-size: 1em;
+    font-family: sans-serif;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Subtle shadow lift */
+    background-color: white;
+    border-radius: 8px 8px 0 0; /* Rounds the top corners */
+    overflow: hidden; /* Ensures the corners stay rounded */
+}
+
+/* Header Styling */
+.styled-table thead tr {
+    background-color: #009879; /* You can change this to your site's green or blue */
+    color: #ffffff;
+    text-align: left;
+}
+
+/* Cell Styling */
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px; /* Adds breathing room inside cells */
+}
+
+/* Zebra Striping (Makes reading long tables easier) */
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3; /* Light grey for even rows */
+}
+
+/* Hover Effect (Optional: Highlights the row you are reading) */
+.styled-table tbody tr:hover {
+    background-color: #f1f1f1;
+    cursor: default;
+}
+
+/* Bottom border for the last row */
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+/*        NEW     SECTION                         */
+/* The styling of buttons for lessons begins here */
+
+/* Modifier: Green Button */
+.button-green {
+    background-color: #27ae60; /* Green color (Nephritis) */
+    display: inline-block;    /* Allows the link to have width/height/padding */
+    padding: 10px 20px;       /* Spacing inside the button */
+    color: white;             /* White text */
+    text-decoration: none;    /* Remove the standard underline */
+    border-radius: 5px;       /* Rounded corners */
+    font-weight: bold;
+    margin-top: 20px;         /* Add some space outside the button */
+    transition: background-color 0.3s; /* Smooth color change animation */
+}
+
+/* Hover state for the green button */
+.button-green:hover {
+    background-color: #2ecc71; /* Lighter green (Emerald) */
+    color: white;
+    cursor: pointer;          /* Shows the hand icon */
+    transform: translateY(-2px); /* Slight "lift" effect */
+}
+
+/* Layout Helper: specific spacing for the navigation area */
+.nav-section {
+    margin-top: 40px;      /* Space away from the exercise inputs */
+    padding-top: 20px;
+    border-top: 1px solid #eee; /* Optional: a nice separator line */
+}
+
+.primary-action {
+    margin-bottom: 15px;   /* Pushes the blue buttons down */
+}
+
+/* --- Hero Banner 樣式 --- */
+
+.hero-banner {
+    /* 設定橫幅的高度 */
+    height: 400px; /* 你可以根據需要調整這個數字 */
+    
+    /* 設定背景圖片 */
+    /* 記得把 'assets/banner-bg.jpg' 換成你實際的圖片路徑 */
+    background-image: url('assets/cover/main-page-cover.jpg');
+    
+    /* 關鍵：讓背景圖覆蓋整個區域，且不變形 */
+    background-size: cover;
+    /* 關鍵：讓背景圖居中顯示 */
+    background-position: center center;
+    
+    /* 使用 Flexbox 讓裡面的文字垂直和水平置中 */
+    display: flex;
+    justify-content: center; /* 水平置中 */
+    align-items: center;     /* 垂直置中 */
+    
+    /* 為了之後可能的文字陰影做準備 */
+    position: relative;
+
+    /* 為了讓文字更清楚，可以在圖片上蓋一層半透明的黑色遮罩 (可選) */
+    /* 如果你的圖片很深，可以註解掉下面這一行 */
+    background-color: rgba(0, 0, 0, 0.5); /* 50% 透明度的黑色 */
+    background-blend-mode: overlay; /* 將顏色與圖片混合 */
+}
+
+.banner-content {
+    text-align: center; /* 文字內容居中 */
+    color: white;       /* 文字改成白色，以便在深色背景上閱讀 */
+    padding: 20px;
+}
+
+/* 特別調整橫幅裡的標題樣式 */
+.hero-banner h1 {
+    font-size: 3em; /* 讓標題字變大 */
+    color: white;
+    margin-bottom: 10px;
+    font-weight: bold;
+    /* 加入文字陰影，確保在任何背景圖上都清晰可讀 */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    /* 移除之前的標題底線 (如果有的話) */
+    border-bottom: none;
+}
+
+/* 橫幅裡的副標題樣式 */
+.hero-banner p {
+    font-size: 1.5em;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Footer Container */
+footer {
+    background-color:#f4f4f4; /* 淡淡的灰色背景 */ 
+    color: black;             /* black text */
+    text-align: center;       /* Center everything */
+    padding: 40px 20px;       /* Lots of space inside */
+    margin-top: 50px;         /* Push it away from the content above */
+}
+
+/* The text inside the footer */
+footer p {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+/* The Icons */
+.social-icon {
+    width: 32px;              /* Fixed size for uniformity */
+    height: 32px;
+    margin: 0 10px;           /* Space between icons */
+    transition: transform 0.2s, opacity 0.2s; /* Animation setup */
+    vertical-align: middle;
+    padding-bottom: 10px;
+}
+
+/* Hover Effects */
+.social-icon:hover {
+    transform: scale(1.2);    /* Grow slightly when hovered */
+    opacity: 0.8;             /* Slight fade */
+    cursor: pointer;
+}
+
+/* Copyright text style */
+.copyright {
+    font-size: 0.8em;         /* Make copyright text smaller */
+    color: #bdc3c7;           /* Light grey text */
+    margin-top: 20px;
+}
